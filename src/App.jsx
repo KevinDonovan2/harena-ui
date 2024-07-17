@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Admin, Resource } from 'react-admin';
 import jsonServerProvider from 'ra-data-json-server';
-import { UserList } from './users';
+import { UserList } from './components/users/users';
 import MyChart from './components/Chart';
 
 const Dashboard = () => (
