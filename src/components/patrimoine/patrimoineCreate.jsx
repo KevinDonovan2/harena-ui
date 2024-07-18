@@ -1,7 +1,7 @@
 import * as React from 'react';
 import {Create ,SimpleForm , TextInput, DateInput} from 'react-admin';
 
-export const PatrimoineInput = (props) => (
+export const PatrimoineCreate = () => (
         <Create>
             <SimpleForm>
                 <TextInput source='nom'/>
