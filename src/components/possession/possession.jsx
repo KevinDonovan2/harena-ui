@@ -9,7 +9,6 @@ import {
     TextInput,
     SelectInput,
     NumberInput,
-    ReferenceInput,
 } from 'react-admin';
 
 // lister les possessions
