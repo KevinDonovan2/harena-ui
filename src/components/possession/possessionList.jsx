@@ -1,7 +1,8 @@
+import * as React from 'react';
 import {
     List,
     Datagrid,
-    TextField
+    TextField,
 } from 'react-admin';
 
 export const PossessionList = props => (
@@ -13,3 +14,4 @@ export const PossessionList = props => (
         </Datagrid>
     </List>
 );
+export default PossessionList;
