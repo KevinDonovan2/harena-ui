@@ -9,13 +9,10 @@ import {
     DateInput,
     EditProps
 } from 'react-admin';
+import { useTypeChange } from '../hook/useTypeChange';
 
 const PossessionEdit: React.FC<EditProps> = props => {
-    const [type, setType] = React.useState<string>('');
-
-    const handleTypeChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-        setType(event.target.value);
-    };
+    const { type, handleTypeChange } = useTypeChange();
 
     return (
         <Edit {...props}>
@@ -28,6 +25,7 @@ const PossessionEdit: React.FC<EditProps> = props => {
                         { id: 'MATERIEL', name: 'Matériel' },
                         { id: 'FLUXARGENT', name: 'Flux d\'Argent' },
                     ]}
+                    onChange={(event) => handleTypeChange(event as React.ChangeEvent<HTMLSelectElement>)}
                 />
                 {type === 'ARGENT' && (
                     <>
