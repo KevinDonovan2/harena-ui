@@ -7,12 +7,13 @@ import {
     NumberInput,
     ReferenceInput,
     DateInput,
+    EditProps
 } from 'react-admin';
 
-const PossessionEdit = props => {
-    const [type, setType] = React.useState('');
+const PossessionEdit: React.FC<EditProps> = props => {
+    const [type, setType] = React.useState<string>('');
 
-    const handleTypeChange = event => {
+    const handleTypeChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
         setType(event.target.value);
     };
 
@@ -27,7 +28,6 @@ const PossessionEdit = props => {
                         { id: 'MATERIEL', name: 'Matériel' },
                         { id: 'FLUXARGENT', name: 'Flux d\'Argent' },
                     ]}
-                    onChange={handleTypeChange}
                 />
                 {type === 'ARGENT' && (
                     <>
@@ -67,4 +67,3 @@ const PossessionEdit = props => {
 };
 
 export default PossessionEdit;
-

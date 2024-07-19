@@ -7,13 +7,14 @@ import {
     NumberInput,
     ReferenceInput,
     DateInput,
+    CreateProps
 } from 'react-admin';
 
-const PossessionCreate = props => {
-    const [type, setType] = React.useState('');
+const PossessionCreate: React.FC<CreateProps> = (props) => {
+    const [type, setType] = React.useState<string>('');
 
-    const handleTypeChange = event => {
-        setType(event.target.value);
+    const handleTypeChange = (event: React.ChangeEvent<{ value: unknown }>) => {
+        setType(event.target.value as string);
     };
 
     return (
@@ -27,7 +28,6 @@ const PossessionCreate = props => {
                         { id: 'MATERIEL', name: 'Matériel' },
                         { id: 'FLUXARGENT', name: 'Flux d\'Argent' },
                     ]}
-                    onChange={handleTypeChange}
                 />
                 {type === 'ARGENT' && (
                     <>

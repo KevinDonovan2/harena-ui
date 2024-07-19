@@ -4,7 +4,7 @@ import {
     TextField
 } from 'react-admin';
 
-export const PatrimoineList = props => (
+export const PatrimoineList: React.FC = props => (
     <List {...props}>
         <Datagrid rowClick="edit">
             <TextField source="nom" />

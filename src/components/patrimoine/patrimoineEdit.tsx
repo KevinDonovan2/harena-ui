@@ -6,7 +6,7 @@ import {
     NumberInput,
 } from 'react-admin';
 
-export const PatrimoineEdit = props => (
+export const PatrimoineEdit: React.FC = props => (
     <Edit {...props}>
         <SimpleForm>
             <TextInput source="nom" />

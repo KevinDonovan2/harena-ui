@@ -1,6 +1,4 @@
-import * as React from 'react';
 import { Admin, Resource } from 'react-admin';
-import jsonServerProvider from 'ra-data-json-server';
 import MyChart from './components/Chart';
 import UserIcon from '@mui/icons-material/Group';
 import InventoryIcon from '@mui/icons-material/Inventory';
@@ -10,6 +8,7 @@ import  PossessionEdit  from './components/possession/possessionEdit';
 import { PatrimoineCreate } from './components/patrimoine/patrimoineCreate';
 import { PatrimoineList } from './components/patrimoine/patrimoineList';
 import { PatrimoineEdit } from './components/patrimoine/patrimoineEdit';
+import dataProvider from './providers/dataProvider';
 
 const Dashboard = () => (
     <div>
@@ -18,7 +17,6 @@ const Dashboard = () => (
     </div>
   );
 
-const dataProvider = jsonServerProvider('http://jsonplaceholder.typicode.com');
 
 const App = () => (
     <Admin dataProvider={dataProvider} dashboard={Dashboard}>
