@@ -5,12 +5,12 @@ import { possessionProvider } from './possessionProvider';
 
 const getProvider = (resource: string): CustomDataprovider<any> => {
     switch (resource) {
-        case "patrimoines":
+        case 'patrimoines':
             return patrimoineProvider;
-        case "users":
+        case 'users':
             return possessionProvider;
         default:
-            throw new Error("Unknown resources");
+            throw new Error('Unknown resources');
     }
 };
 
@@ -63,17 +63,17 @@ const dataProvider: DataProvider = {
         };
     },
     deleteMany: () => {
-        throw new Error("Not implemented");
+        throw new Error('Not implemented');
     },
     getMany: () => {
-        throw new Error("Not implemented");
+        throw new Error('Not implemented');
     },
     getManyReference: () => {
-        throw new Error("Not implemented");
+        throw new Error('Not implemented');
     },
     updateMany: () => {
-        throw new Error("Not implemented");
-    },
+        throw new Error('Not implemented');
+    }
 };
 
 export default dataProvider;

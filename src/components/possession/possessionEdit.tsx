@@ -11,7 +11,7 @@ import {
 } from 'react-admin';
 import { useTypeChange } from '../hook/useTypeChange';
 
-const PossessionEdit: React.FC<EditProps> = props => {
+const PossessionEdit: React.FC<EditProps> = (props) => {
     const { type, handleTypeChange } = useTypeChange();
 
     return (
@@ -23,9 +23,13 @@ const PossessionEdit: React.FC<EditProps> = props => {
                     choices={[
                         { id: 'ARGENT', name: 'Argent' },
                         { id: 'MATERIEL', name: 'Matériel' },
-                        { id: 'FLUXARGENT', name: 'Flux d\'Argent' },
+                        { id: 'FLUXARGENT', name: "Flux d'Argent" }
                     ]}
-                    onChange={(event) => handleTypeChange(event as React.ChangeEvent<HTMLSelectElement>)}
+                    onChange={(event) =>
+                        handleTypeChange(
+                            event as React.ChangeEvent<HTMLSelectElement>
+                        )
+                    }
                 />
                 {type === 'ARGENT' && (
                     <>
@@ -35,7 +39,7 @@ const PossessionEdit: React.FC<EditProps> = props => {
                                 { id: 'DETTE', name: 'Dette' },
                                 { id: 'CREANCE', name: 'Créance' },
                                 { id: 'ESPECES', name: 'Espèces' },
-                                { id: 'AUTRES', name: 'Autres' },
+                                { id: 'AUTRES', name: 'Autres' }
                             ]}
                         />
                         <DateInput source="argent.date_d_ouverture" />
@@ -49,7 +53,10 @@ const PossessionEdit: React.FC<EditProps> = props => {
                 )}
                 {type === 'FLUXARGENT' && (
                     <>
-                        <ReferenceInput source="flux_argent.argent" reference="argents">
+                        <ReferenceInput
+                            source="flux_argent.argent"
+                            reference="argents"
+                        >
                             <SelectInput optionText="nom" />
                         </ReferenceInput>
                         <DateInput source="flux_argent.debut" />

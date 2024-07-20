@@ -8,5 +8,3 @@ const Possession = {
     edit: PossessionEdit
 };
 export default Possession;
-
-

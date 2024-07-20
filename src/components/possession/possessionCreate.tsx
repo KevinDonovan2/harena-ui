@@ -23,9 +23,13 @@ const PossessionCreate: React.FC<CreateProps> = (props) => {
                     choices={[
                         { id: 'ARGENT', name: 'Argent' },
                         { id: 'MATERIEL', name: 'Matériel' },
-                        { id: 'FLUXARGENT', name: 'Flux d\'Argent' },
+                        { id: 'FLUXARGENT', name: "Flux d'Argent" }
                     ]}
-                    onChange={(event) => handleTypeChange(event as React.ChangeEvent<HTMLSelectElement>)} onChange={handleTypeChange}
+                    onChange={(event) =>
+                        handleTypeChange(
+                            event as React.ChangeEvent<HTMLSelectElement>
+                        )
+                    }
                 />
                 {type === 'ARGENT' && (
                     <>
@@ -35,7 +39,7 @@ const PossessionCreate: React.FC<CreateProps> = (props) => {
                                 { id: 'DETTE', name: 'Dette' },
                                 { id: 'CREANCE', name: 'Créance' },
                                 { id: 'ESPECES', name: 'Espèces' },
-                                { id: 'AUTRES', name: 'Autres' },
+                                { id: 'AUTRES', name: 'Autres' }
                             ]}
                         />
                         <DateInput source="argent.date_d_ouverture" />
@@ -49,7 +53,10 @@ const PossessionCreate: React.FC<CreateProps> = (props) => {
                 )}
                 {type === 'FLUXARGENT' && (
                     <>
-                        <ReferenceInput source="flux_argent.argent" reference="argents">
+                        <ReferenceInput
+                            source="flux_argent.argent"
+                            reference="argents"
+                        >
                             <SelectInput optionText="nom" />
                         </ReferenceInput>
                         <DateInput source="flux_argent.debut" />

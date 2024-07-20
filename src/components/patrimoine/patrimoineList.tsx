@@ -1,10 +1,6 @@
-import {
-    List,
-    Datagrid,
-    TextField
-} from 'react-admin';
+import { List, Datagrid, TextField } from 'react-admin';
 
-export const PatrimoineList: React.FC = props => (
+export const PatrimoineList: React.FC = (props) => (
     <List {...props}>
         <Datagrid rowClick="edit">
             <TextField source="nom" />
