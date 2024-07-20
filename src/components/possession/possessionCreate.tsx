@@ -9,13 +9,10 @@ import {
     DateInput,
     CreateProps
 } from 'react-admin';
+import { useTypeChange } from '../hook/useTypeChange';
 
 const PossessionCreate: React.FC<CreateProps> = (props) => {
-    const [type, setType] = React.useState<string>('');
-
-    const handleTypeChange = (event: React.ChangeEvent<{ value: unknown }>) => {
-        setType(event.target.value as string);
-    };
+    const { type, handleTypeChange } = useTypeChange();
 
     return (
         <Create {...props}>
@@ -28,6 +25,7 @@ const PossessionCreate: React.FC<CreateProps> = (props) => {
                         { id: 'MATERIEL', name: 'Matériel' },
                         { id: 'FLUXARGENT', name: 'Flux d\'Argent' },
                     ]}
+                    onChange={(event) => handleTypeChange(event as React.ChangeEvent<HTMLSelectElement>)} onChange={handleTypeChange}
                 />
                 {type === 'ARGENT' && (
                     <>
